@@ -1,0 +1,153 @@
+/* Everything is prefixed with "dash-" so it can't clash with Bootstrap's
+   own classes (.card, .badge, .table) that are still loaded globally. */
+
+.dash {
+  --dash-bg-card: #ffffff;
+  --dash-border: #e5e7eb;
+  --dash-text: #111827;
+  --dash-muted: #6b7280;
+  --dash-radius: 12px;
+  --dash-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.dash-title {
+  font-weight: 700;
+  color: var(--dash-text);
+  margin-bottom: 1.5rem;
+}
+
+.dash-heading {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--dash-text);
+  margin: 2rem 0 1rem;
+}
+
+/* ---------- Layout grids ---------- */
+.dash-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.dash-grid--two {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.dash-grid--status {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+/* Stack on small screens */
+@media (max-width: 768px) {
+  .dash-grid--two,
+  .dash-grid--status {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Cards ---------- */
+.dash-card {
+  background: var(--dash-bg-card);
+  border: 1px solid var(--dash-border);
+  border-radius: var(--dash-radius);
+  box-shadow: var(--dash-shadow);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.dash-label {
+  color: var(--dash-muted);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.dash-number {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--dash-text);
+}
+
+.dash-number--sm {
+  font-size: 2rem;
+}
+
+/* ---------- Status cards ----------
+   Each status sets one variable (--accent); the pill and border reuse it. */
+.dash-status {
+  border-top: 4px solid var(--accent);
+}
+
+.dash-status--available { --accent: #16a34a; }
+.dash-status--onloan    { --accent: #2563eb; }
+.dash-status--overdue   { --accent: #dc2626; }
+.dash-status--inrepair  { --accent: #d97706; }
+.dash-status--retired   { --accent: #6b7280; }
+
+.dash-pill {
+  background: var(--accent);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+}
+
+/* ---------- Category bars ---------- */
+.dash-bars {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.dash-bar-row {
+  display: grid;
+  grid-template-columns: 140px 1fr 40px;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 0;
+}
+
+.dash-bar-label {
+  color: var(--dash-text);
+  font-weight: 500;
+}
+
+.dash-bar-track {
+  background: #f3f4f6;
+  border-radius: 999px;
+  height: 12px;
+  overflow: hidden;
+}
+
+.dash-bar-fill {
+  background: #2563eb;
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}
+
+.dash-bar-count {
+  text-align: right;
+  font-weight: 600;
+  color: var(--dash-text);
+}
+
+/* ---------- Loading / error ---------- */
+.dash-loading {
+  color: var(--dash-muted);
+}
+
+.dash-error {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #991b1b;
+  padding: 1rem;
+  border-radius: var(--dash-radius);
+}

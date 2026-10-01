@@ -1,0 +1,116 @@
+/* Shared building blocks. The "ui-" prefix keeps these from clashing with
+   Bootstrap's class names while Bootstrap is still loaded on older pages. */
+
+:root {
+  --ui-text: #111827;
+  --ui-muted: #6b7280;
+  --ui-border: #e5e7eb;
+  --ui-bg-stripe: #f9fafb;
+  --ui-radius: 8px;
+
+  --ui-blue: #2563eb;
+  --ui-green: #16a34a;
+  --ui-red: #dc2626;
+  --ui-amber: #d97706;
+  --ui-gray: #6b7280;
+}
+
+.ui-page-title {
+  font-weight: 700;
+  color: var(--ui-text);
+  margin-bottom: 1.5rem;
+}
+
+/* ---------- Form controls ---------- */
+.ui-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  max-width: 260px;
+  margin-bottom: 1rem;
+}
+
+.ui-field label {
+  font-size: 0.85rem;
+  color: var(--ui-muted);
+}
+
+.ui-select {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--ui-border);
+  border-radius: var(--ui-radius);
+  background: #ffffff;
+  font-size: 1rem;
+  color: var(--ui-text);
+}
+
+.ui-select:focus {
+  outline: 2px solid var(--ui-blue);
+  outline-offset: 1px;
+}
+
+/* ---------- Table ---------- */
+.ui-table-wrap {
+  overflow-x: auto; /* scrolls sideways on narrow screens instead of breaking the layout */
+  border: 1px solid var(--ui-border);
+  border-radius: var(--ui-radius);
+}
+
+.ui-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.ui-table th,
+.ui-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--ui-border);
+}
+
+.ui-table th {
+  background: var(--ui-bg-stripe);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ui-muted);
+}
+
+.ui-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.ui-table tbody tr:hover {
+  background: var(--ui-bg-stripe);
+}
+
+/* ---------- Badges ---------- */
+.ui-badge {
+  display: inline-block;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: var(--ui-gray);
+}
+
+.ui-badge--loaned        { background: var(--ui-blue); }
+.ui-badge--returned      { background: var(--ui-green); }
+.ui-badge--markedoverdue { background: var(--ui-red); }
+
+/* ---------- Alerts ---------- */
+.ui-alert {
+  padding: 0.85rem 1rem;
+  border-radius: var(--ui-radius);
+  margin-bottom: 1rem;
+  border: 1px solid var(--ui-border);
+  background: var(--ui-bg-stripe);
+  color: var(--ui-muted);
+}
+
+.ui-alert--error {
+  background: #fef2f2;
+  border-color: #fecaca;
+  color: #991b1b;
+}

@@ -1,0 +1,18 @@
+.my-loans-form {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+.my-loans-button {
+ padding: 0.6rem 1.25rem;
+ background: var(--ul-blue, #2563eb);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  height: fit-content;
+ 
+}
